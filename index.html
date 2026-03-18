@@ -20,12 +20,7 @@
     * {
       box-sizing: border-box;
     }
-<footer class="site-footer">
-  <p>
-    This materials database was developed and curated by Smitakshi Goswami.
-    All photoluminescence (PL) measurements presented here were performed and analyzed by the author.
-  </p>
-</footer>
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -120,6 +115,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 22px;
+      margin-bottom: 30px;
     }
 
     .card {
@@ -157,6 +153,38 @@
       color: #6d7b83;
     }
 
+    .section-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 2px 8px rgba(18, 28, 33, 0.04);
+    }
+
+    .section-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 22px;
+      color: var(--accent);
+    }
+
+    .section-card p {
+      margin: 0;
+      color: #334047;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .site-footer {
+      margin-top: 40px;
+      padding: 20px 0;
+      font-size: 13px;
+      color: #6a777f;
+      border-top: 1px solid var(--border);
+      line-height: 1.6;
+    }
+
     @media (max-width: 900px) {
       .sidebar {
         position: relative;
@@ -174,15 +202,6 @@
         flex-direction: column;
       }
     }
-    <div class="section-card">
-  <h3>Data & Attribution</h3>
-  <p>
-    This database compiles experimental and computational insights across selected phosphide
-    semiconductor families. All photoluminescence (PL) measurements presented here were
-    performed and analyzed by Smitakshi Goswami as part of ongoing research on
-    next-generation photovoltaic and infrared materials.
-  </p>
-</div>
   </style>
 </head>
 <body>
@@ -198,10 +217,10 @@
       <nav class="nav">
         <a href="index.html" class="active">Home</a>
         <a href="am2p2.html">AM₂P₂</a>
+        <a href="zp.html">Zinc Phosphides</a>
         <a href="mgp4.html">MgP₄</a>
         <a href="sri2p2.html">SrI₂P₂</a>
         <a href="rb-nazn4p3.html">Rb/NaZn₄P₃</a>
-         <a href="zp.html">Zinc Phosphides</a>
       </nav>
 
       <div class="nav-section-title">Content Scope</div>
@@ -223,16 +242,15 @@
         </p>
       </section>
 
-       <section class="grid">
+      <section class="grid">
         <a class="card" href="zp.html">
-          <h3>ZnP</h3>
+          <h3>Zinc Phosphides</h3>
           <p>
-            Zinc Phosphides revelant to optoelectronic applications
+            Zinc phosphide materials relevant to optoelectronic and photovoltaic applications.
           </p>
           <div class="meta">Crystal structure • PL • band gap • papers</div>
         </a>
 
-      <section class="grid">
         <a class="card" href="am2p2.html">
           <h3>AM₂P₂</h3>
           <p>
@@ -269,6 +287,23 @@
           <div class="meta">Crystal structure • PL • band gap • papers</div>
         </a>
       </section>
+
+      <section class="section-card">
+        <h3>Data & Attribution</h3>
+        <p>
+          This database compiles experimental and computational insights across selected phosphide
+          semiconductor families. All photoluminescence (PL) measurements presented here were
+          performed and analyzed by Smitakshi Goswami as part of ongoing research on
+          next-generation photovoltaic and infrared materials.
+        </p>
+      </section>
+
+      <footer class="site-footer">
+        <p>
+          This materials database was developed and curated by Smitakshi Goswami.
+          All photoluminescence (PL) measurements presented here were performed and analyzed by the author.
+        </p>
+      </footer>
     </main>
   </div>
 </body>
