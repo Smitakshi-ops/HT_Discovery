@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SrI₂P₂ | Materials Database</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f2;
+      color: #1f2a24;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 280px;
+      background-color: #a3bfa8;
+      padding: 30px 20px;
+      box-sizing: border-box;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      overflow-y: auto;
+      border-right: 1px solid #8fae96;
+    }
+
+    .sidebar img {
+      width: 120px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    .sidebar h1 {
+      font-size: 24px;
+      margin: 10px 0 8px;
+    }
+
+    .sidebar p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .nav-links a,
+    .social-links a {
+      display: block;
+      text-decoration: none;
+      color: #1f2a24;
+      padding: 10px 12px;
+      margin: 8px 0;
+      border-radius: 8px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover,
+    .social-links a:hover {
+      background-color: #8fae96;
+      color: white;
+    }
+
+    .main-content {
+      margin-left: 280px;
+      padding: 60px 56px;
+      max-width: 1000px;
+    }
+
+    .section-card {
+      background: white;
+      border: 1px solid #d7e3d8;
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    .section-card h2 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    .section-card p, .section-card li {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #2c372f;
+    }
+
+    .section-card img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 12px;
+      border: 1px solid #d7e3d8;
+      background-color: #f7f7f2;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    a {
+      color: #1f2a24;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #4f6f57;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #8fae96;
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <img src="Profile.png" alt="Profile" />
+      <h1>SrI<sub>2</sub>P<sub>2</sub></h1>
+      <p>Materials Database</p>
+
+      <div class="nav-links">
+        <a href="index.html">Materials Home</a>
+        <a href="am2p2.html">AM₂P₂</a>
+        <a href="zinc-phosphides.html">Zinc phosphides</a>
+        <a href="mgp4.html">MgP₄</a>
+        <a href="sri2p2.html">SrI₂P₂</a>
+        <a href="rb-nazn4p3.html">Rb/NaZn₄P₃</a>
+      </div>
+
+      <div class="social-links">
+        <a href="https://scholar.google.com/citations?user=akgBNTIAAAAJ&hl=en" target="_blank">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/smitakshigoswami" target="_blank">LinkedIn</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="section-card">
+        <h2>Overview</h2>
+        <p>
+          SrI<sub>2</sub>P<sub>2</sub> can be highlighted here as part of a broader phosphide discovery space, including its structural identity, optoelectronic behavior, and relation to high-throughput theory screening.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <h2>Crystal Structure</h2>
+        <p>
+          Add structure description, symmetry information, and crystal chemistry notes here.
+        </p>
+        <img src="sri2p2-structure.png" alt="SrI2P2 crystal structure">
+      </div>
+
+      <div class="section-card">
+        <h2>Photoluminescence</h2>
+        <p>
+          Add PL features, peak energies, temperature-dependent trends, and any relevant recombination pathways here.
+        </p>
+        <img src="sri2p2-pl.png" alt="SrI2P2 photoluminescence">
+      </div>
+
+      <div class="section-card">
+        <h2>Band Gap</h2>
+        <p>
+          Add reported band gap values from experiment and theory here.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <h2>Related Papers</h2>
+        <ul>
+          <li><a href="#" target="_blank">Paper title 1</a></li>
+          <li><a href="#" target="_blank">Paper title 2</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
