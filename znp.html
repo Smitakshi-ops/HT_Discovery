@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zinc Phosphides | Phosphide Materials Database</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --sidebar: #1f2a30;
+      --sidebar-text: #dfe7eb;
+      --accent: #3e6b73;
+      --muted: #5f6b73;
+      --border: #d6dde1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: #1d2529;
+    }
+
+    .layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 290px;
+      background: var(--sidebar);
+      color: var(--sidebar-text);
+      padding: 28px 22px;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar h1 {
+      margin: 0 0 8px;
+      font-size: 23px;
+      color: white;
+    }
+
+    .sidebar p {
+      margin: 0 0 24px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #b8c7cf;
+    }
+
+    .nav-section-title {
+      margin: 24px 0 10px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9fb1ba;
+    }
+
+    .nav a {
+      display: block;
+      color: var(--sidebar-text);
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: #2b3940;
+      color: white;
+    }
+
+    .content {
+      margin-left: 290px;
+      width: calc(100% - 290px);
+      padding: 42px 48px 56px;
+    }
+
+    .page-header h2 {
+      margin: 0 0 10px;
+      font-size: 34px;
+    }
+
+    .page-header p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 900px;
+    }
+
+    .section-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 2px 8px rgba(18, 28, 33, 0.04);
+    }
+
+    .section-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 22px;
+      color: var(--accent);
+    }
+
+    .section-card p,
+    .section-card li {
+      line-height: 1.8;
+      color: #334047;
+    }
+
+    .section-card img {
+      width: 100%;
+      max-width: 560px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-top: 12px;
+      background: white;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 28px 20px 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h1>Phosphide Materials Database</h1>
+      <p>
+        Structured material pages for crystal structure, photoluminescence,
+        band gap, and literature.
+      </p>
+
+      <div class="nav-section-title">Materials Families</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="am2p2.html">AM₂P₂</a>
+        <a href="zp.html" class="active">Zinc Phosphides</a>
+        <a href="mgp4.html">MgP₄</a>
+        <a href="sri2p2.html">SrI₂P₂</a>
+        <a href="rb-nazn4p3.html">Rb/NaZn₄P₃</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <div class="page-header">
+        <h2>Zinc Phosphides</h2>
+        <p>
+          This page collects zinc phosphide materials relevant to photovoltaic and
+          optoelectronic applications, including crystal structure information,
+          photoluminescence behavior, band gap values, and literature links.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <h3>Overview</h3>
+        <p>
+          Zinc phosphides form an important class of earth-abundant semiconductor materials
+          with strong relevance to next-generation photovoltaic absorbers. This section can
+          be used to summarize family-level features, major representative compounds, and
+          why these systems are compelling for optical and electronic studies.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <h3>Crystal Structure</h3>
+        <p>
+          Add structural information here, such as representative crystal systems,
+          symmetry, bonding motifs, and family-level comparisons across zinc phosphide compounds.
+        </p>
+        <img src="zp-structure.png" alt="Zinc phosphides crystal structure">
+      </div>
+
+      <div class="section-card">
+        <h3>Photoluminescence</h3>
+        <p>
+          Add PL spectra, emission energies, linewidths, temperature-dependent trends,
+          and comments on band-edge versus defect-related emission here.
+        </p>
+        <img src="zp-pl.png" alt="Zinc phosphides photoluminescence">
+      </div>
+
+      <div class="section-card">
+        <h3>Band Gap</h3>
+        <p>
+          Add experimental and theoretical band gap values here, including notes on whether
+          the gap is direct or indirect, and how it compares across the zinc phosphide family.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <h3>Related Papers</h3>
+        <ul>
+          <li><a href="#" target="_blank">Paper title 1</a></li>
+          <li><a href="#" target="_blank">Paper title 2</a></li>
+          <li><a href="#" target="_blank">Paper title 3</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
