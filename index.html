@@ -3,195 +3,248 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Semiconducting Materials Database | Smitakshi Goswami</title>
+  <title>Phosphide Materials Database</title>
   <style>
+    :root {
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --sidebar: #1f2a30;
+      --sidebar-text: #dfe7eb;
+      --accent: #3e6b73;
+      --accent-light: #d9e7ea;
+      --text: #1d2529;
+      --muted: #5f6b73;
+      --border: #d6dde1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f7f7f2;
-      color: #1f2a24;
+      background: var(--bg);
+      color: var(--text);
     }
 
-    .container {
+    .layout {
       display: flex;
       min-height: 100vh;
     }
 
     .sidebar {
-      width: 280px;
-      background-color: #a3bfa8;
-      padding: 30px 20px;
-      box-sizing: border-box;
-      text-align: center;
+      width: 290px;
+      background: var(--sidebar);
+      color: var(--sidebar-text);
+      padding: 28px 22px;
       position: fixed;
       top: 0;
       left: 0;
       height: 100vh;
       overflow-y: auto;
-      border-right: 1px solid #8fae96;
-    }
-
-    .sidebar img {
-      width: 120px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
-      display: block;
-      margin: 0 auto 20px;
     }
 
     .sidebar h1 {
-      font-size: 26px;
-      margin: 10px 0 8px;
-    }
-
-    .sidebar p {
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 22px;
-    }
-
-    .nav-links a,
-    .social-links a {
-      display: block;
-      text-decoration: none;
-      color: #1f2a24;
-      padding: 10px 12px;
-      margin: 8px 0;
-      border-radius: 8px;
-      transition: background-color 0.2s ease, color 0.2s ease;
-      font-size: 15px;
-    }
-
-    .nav-links a:hover,
-    .social-links a:hover {
-      background-color: #8fae96;
+      margin: 0 0 8px 0;
+      font-size: 24px;
+      line-height: 1.2;
       color: white;
     }
 
-    .main-content {
-      margin-left: 280px;
-      padding: 60px 56px;
-      max-width: 1100px;
+    .sidebar p {
+      margin: 0 0 24px 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #b8c7cf;
     }
 
-    .main-content h2 {
+    .nav-section-title {
+      margin: 24px 0 10px 0;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #9fb1ba;
+    }
+
+    .nav a {
+      display: block;
+      color: var(--sidebar-text);
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: #2b3940;
+      color: white;
+    }
+
+    .content {
+      margin-left: 290px;
+      padding: 48px 48px 56px;
+      width: calc(100% - 290px);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ffffff, #eef4f5);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px;
+      margin-bottom: 30px;
+    }
+
+    .hero h2 {
+      margin: 0 0 12px 0;
       font-size: 34px;
-      margin-top: 0;
-      margin-bottom: 16px;
+      line-height: 1.2;
     }
 
-    .main-content p {
-      font-size: 18px;
+    .hero p {
+      margin: 0;
+      max-width: 850px;
+      color: var(--muted);
+      font-size: 17px;
       line-height: 1.8;
-      color: #2c372f;
     }
 
-    .materials-grid {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
     }
 
-    .material-card {
-      background-color: white;
-      border: 1px solid #d7e3d8;
-      border-radius: 14px;
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
       padding: 22px;
       text-decoration: none;
-      color: #1f2a24;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      color: inherit;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      box-shadow: 0 2px 8px rgba(18, 28, 33, 0.04);
     }
 
-    .material-card:hover {
+    .card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 18px rgba(18, 28, 33, 0.08);
     }
 
-    .material-card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 22px;
+    .card h3 {
+      margin: 0 0 10px 0;
+      font-size: 24px;
+      color: var(--accent);
     }
 
-    .material-card p {
+    .card p {
       margin: 0;
+      color: var(--muted);
       font-size: 15px;
-      line-height: 1.6;
-      color: #455248;
+      line-height: 1.7;
     }
 
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
+    .card .meta {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #6d7b83;
+    }
 
+    @media (max-width: 900px) {
       .sidebar {
         position: relative;
         width: 100%;
         height: auto;
-        border-right: none;
-        border-bottom: 1px solid #8fae96;
       }
 
-      .main-content {
+      .content {
         margin-left: 0;
-        padding: 32px 24px;
+        width: 100%;
+        padding: 28px 20px 36px;
+      }
+
+      .layout {
+        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="layout">
     <aside class="sidebar">
-      <h1>Materials Database</h1>
+      <h1>Phosphide Materials Database</h1>
       <p>
-        Semiconductor families studied for photovoltaic and infrared applications
+        A research-facing database for organizing crystal structures,
+        photoluminescence, band gaps, and literature across selected phosphide families.
       </p>
 
-      <div class="nav-links">
-        <a href="index.html">Materials Home</a>
+      <div class="nav-section-title">Materials Families</div>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
         <a href="am2p2.html">AM₂P₂</a>
-        <a href="zinc-phosphides.html">Zinc phosphides</a>
         <a href="mgp4.html">MgP₄</a>
         <a href="sri2p2.html">SrI₂P₂</a>
         <a href="rb-nazn4p3.html">Rb/NaZn₄P₃</a>
-      </div>
+      </nav>
 
-    <main class="main-content">
-      <h2>Semiconducting Materials Families</h2>
-      <p>
-        This site organizes key materials systems investigated for photovoltaic and infrared optoelectronic applications. Each section contains crystal structure information, photoluminescence data, band gap values, and links to relevant papers.
-      </p>
+      <div class="nav-section-title">Content Scope</div>
+      <nav class="nav">
+        <a href="#">Crystal Structures</a>
+        <a href="#">Photoluminescence</a>
+        <a href="#">Band Gaps</a>
+        <a href="#">Related Papers</a>
+      </nav>
+    </aside>
 
-      <div class="materials-grid">
-        <a class="material-card" href="am2p2.html">
+    <main class="content">
+      <section class="hero">
+        <h2>Materials Families</h2>
+        <p>
+          This database organizes selected semiconducting phosphide systems into broad material groups.
+          Each family page is designed to hold crystal structure visuals, PL data, band gap information,
+          and literature links in a consistent format for quick comparison across compounds.
+        </p>
+      </section>
+
+      <section class="grid">
+        <a class="card" href="am2p2.html">
           <h3>AM₂P₂</h3>
-          <p>Zintl-phase phosphides including Ca-, Sr-, and Ba-based compounds with strong relevance for next-generation absorber design.</p>
+          <p>
+            Zintl-phase phosphides including Ca-, Sr-, and Ba-based systems relevant to
+            optoelectronic screening and next-generation absorber discovery.
+          </p>
+          <div class="meta">Crystal structure • PL • band gap • papers</div>
         </a>
 
-        <a class="material-card" href="zinc-phosphides.html">
-          <h3>Zinc phosphides</h3>
-          <p>ZnP₂ and related zinc phosphide systems with promising optical properties and earth-abundant compositions.</p>
-        </a>
-
-        <a class="material-card" href="mgp4.html">
+        <a class="card" href="mgp4.html">
           <h3>MgP₄</h3>
-          <p>Magnesium phosphide family with interesting structure–property relationships and potential semiconducting behavior.</p>
+          <p>
+            Magnesium phosphide family for comparing structure–property relationships,
+            optical response, and semiconducting behavior across phosphide chemistries.
+          </p>
+          <div class="meta">Crystal structure • PL • band gap • papers</div>
         </a>
 
-        <a class="material-card" href="sri2p2.html">
+        <a class="card" href="sri2p2.html">
           <h3>SrI₂P₂</h3>
-          <p>Strontium-containing phosphide systems of interest for benchmarking theory, crystal chemistry, and optoelectronic properties.</p>
+          <p>
+            Strontium-containing phosphide systems included for theory–experiment
+            benchmarking and broader crystal chemistry comparisons.
+          </p>
+          <div class="meta">Crystal structure • PL • band gap • papers</div>
         </a>
 
-        <a class="material-card" href="rb-nazn4p3.html">
+        <a class="card" href="rb-nazn4p3.html">
           <h3>Rb/NaZn₄P₃</h3>
-          <p>Alkali zinc phosphides offering a broader structural and chemical design space for new semiconductor discovery.</p>
+          <p>
+            Alkali zinc phosphides that expand the accessible structural design space
+            for semiconductor discovery and optical-property evaluation.
+          </p>
+          <div class="meta">Crystal structure • PL • band gap • papers</div>
         </a>
-      </div>
+      </section>
     </main>
   </div>
 </body>
