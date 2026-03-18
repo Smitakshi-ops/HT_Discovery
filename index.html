@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semiconducting Materials Database | Smitakshi Goswami</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f2;
+      color: #1f2a24;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 280px;
+      background-color: #a3bfa8;
+      padding: 30px 20px;
+      box-sizing: border-box;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      overflow-y: auto;
+      border-right: 1px solid #8fae96;
+    }
+
+    .sidebar img {
+      width: 120px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    .sidebar h1 {
+      font-size: 26px;
+      margin: 10px 0 8px;
+    }
+
+    .sidebar p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    .nav-links a,
+    .social-links a {
+      display: block;
+      text-decoration: none;
+      color: #1f2a24;
+      padding: 10px 12px;
+      margin: 8px 0;
+      border-radius: 8px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover,
+    .social-links a:hover {
+      background-color: #8fae96;
+      color: white;
+    }
+
+    .main-content {
+      margin-left: 280px;
+      padding: 60px 56px;
+      max-width: 1100px;
+    }
+
+    .main-content h2 {
+      font-size: 34px;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    .main-content p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #2c372f;
+    }
+
+    .materials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .material-card {
+      background-color: white;
+      border: 1px solid #d7e3d8;
+      border-radius: 14px;
+      padding: 22px;
+      text-decoration: none;
+      color: #1f2a24;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .material-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+
+    .material-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .material-card p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #455248;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #8fae96;
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <img src="Profile.png" alt="Smitakshi Goswami" />
+      <h1>Materials Database</h1>
+      <p>
+        Semiconductor families studied for photovoltaic and infrared applications
+      </p>
+
+      <div class="nav-links">
+        <a href="index.html">Materials Home</a>
+        <a href="am2p2.html">AM₂P₂</a>
+        <a href="zinc-phosphides.html">Zinc phosphides</a>
+        <a href="mgp4.html">MgP₄</a>
+        <a href="sri2p2.html">SrI₂P₂</a>
+        <a href="rb-nazn4p3.html">Rb/NaZn₄P₃</a>
+      </div>
+
+      <div class="social-links">
+        <a href="https://scholar.google.com/citations?user=akgBNTIAAAAJ&hl=en" target="_blank">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/smitakshigoswami" target="_blank">LinkedIn</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <h2>Semiconducting Materials Families</h2>
+      <p>
+        This site organizes key materials systems investigated for photovoltaic and infrared optoelectronic applications. Each section contains crystal structure information, photoluminescence data, band gap values, and links to relevant papers.
+      </p>
+
+      <div class="materials-grid">
+        <a class="material-card" href="am2p2.html">
+          <h3>AM₂P₂</h3>
+          <p>Zintl-phase phosphides including Ca-, Sr-, and Ba-based compounds with strong relevance for next-generation absorber design.</p>
+        </a>
+
+        <a class="material-card" href="zinc-phosphides.html">
+          <h3>Zinc phosphides</h3>
+          <p>ZnP₂ and related zinc phosphide systems with promising optical properties and earth-abundant compositions.</p>
+        </a>
+
+        <a class="material-card" href="mgp4.html">
+          <h3>MgP₄</h3>
+          <p>Magnesium phosphide family with interesting structure–property relationships and potential semiconducting behavior.</p>
+        </a>
+
+        <a class="material-card" href="sri2p2.html">
+          <h3>SrI₂P₂</h3>
+          <p>Strontium-containing phosphide systems of interest for benchmarking theory, crystal chemistry, and optoelectronic properties.</p>
+        </a>
+
+        <a class="material-card" href="rb-nazn4p3.html">
+          <h3>Rb/NaZn₄P₃</h3>
+          <p>Alkali zinc phosphides offering a broader structural and chemical design space for new semiconductor discovery.</p>
+        </a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
