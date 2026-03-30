@@ -3,310 +3,179 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phosphide Materials Database</title>
+  <title>PL Measurement Settings</title>
+
   <style>
-    :root {
-      --bg: #f4f6f8;
-      --panel: #ffffff;
-      --sidebar: #1f2a30;
-      --sidebar-text: #dfe7eb;
-      --accent: #3e6b73;
-      --accent-light: #d9e7ea;
-      --text: #1d2529;
-      --muted: #5f6b73;
-      --border: #d6dde1;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: #f4f6f8;
+      color: #1d2529;
     }
 
-    .layout {
-      display: flex;
-      min-height: 100vh;
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 24px;
     }
 
-    .sidebar {
-      width: 290px;
-      background: var(--sidebar);
-      color: var(--sidebar-text);
-      padding: 28px 22px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      overflow-y: auto;
-    }
-
-    .sidebar h1 {
-      margin: 0 0 8px 0;
-      font-size: 24px;
-      line-height: 1.2;
-      color: white;
-    }
-
-    .sidebar p {
-      margin: 0 0 24px 0;
-      font-size: 14px;
-      line-height: 1.6;
-      color: #b8c7cf;
-    }
-
-    .nav-section-title {
-      margin: 24px 0 10px 0;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #9fb1ba;
-    }
-
-    .nav a {
-      display: block;
-      color: var(--sidebar-text);
-      text-decoration: none;
-      padding: 10px 12px;
-      border-radius: 8px;
-      margin-bottom: 6px;
-      font-size: 15px;
-    }
-
-    .nav a:hover,
-    .nav a.active {
-      background: #2b3940;
-      color: white;
-    }
-
-    .content {
-      margin-left: 290px;
-      padding: 48px 48px 56px;
-      width: calc(100% - 290px);
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #ffffff, #eef4f5);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 32px;
-      margin-bottom: 30px;
-    }
-
-    .hero h2 {
-      margin: 0 0 12px 0;
+    h1 {
       font-size: 34px;
-      line-height: 1.2;
+      margin-bottom: 10px;
     }
 
-    .hero p {
-      margin: 0;
-      max-width: 850px;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.8;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
+    .subtitle {
+      color: #5f6b73;
       margin-bottom: 30px;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 22px;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-      box-shadow: 0 2px 8px rgba(18, 28, 33, 0.04);
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 18px rgba(18, 28, 33, 0.08);
-    }
-
-    .card h3 {
-      margin: 0 0 10px 0;
-      font-size: 24px;
-      color: var(--accent);
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-    .card .meta {
-      margin-top: 16px;
-      font-size: 13px;
-      color: #6d7b83;
-    }
-
-    .section-card {
-      background: var(--panel);
-      border: 1px solid var(--border);
+    .section {
+      background: white;
+      border: 1px solid #d6dde1;
       border-radius: 16px;
       padding: 24px;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
       box-shadow: 0 2px 8px rgba(18, 28, 33, 0.04);
     }
 
-    .section-card h3 {
+    .section h2 {
       margin-top: 0;
-      margin-bottom: 12px;
       font-size: 22px;
-      color: var(--accent);
+      color: #3e6b73;
     }
 
-    .section-card p {
-      margin: 0;
-      color: #334047;
-      line-height: 1.8;
-      font-size: 16px;
+    img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #d6dde1;
+      margin-top: 10px;
     }
 
-    .site-footer {
+    .caption {
+      font-size: 14px;
+      color: #5f6b73;
+      margin-top: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #e1e6ea;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    th {
+      background: #eef4f5;
+      color: #1d2529;
+    }
+
+    .footer {
       margin-top: 40px;
-      padding: 20px 0;
       font-size: 13px;
       color: #6a777f;
-      border-top: 1px solid var(--border);
-      line-height: 1.6;
+      border-top: 1px solid #d6dde1;
+      padding-top: 16px;
     }
 
-    @media (max-width: 900px) {
-      .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-      }
+    a.back {
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: none;
+      color: #3e6b73;
+      font-weight: bold;
+    }
 
-      .content {
-        margin-left: 0;
-        width: 100%;
-        padding: 28px 20px 36px;
-      }
-
-      .layout {
-        flex-direction: column;
-      }
+    a.back:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="layout">
-    <aside class="sidebar">
-      <h1>Phosphide Materials Database</h1>
+
+  <div class="container">
+
+    <!-- Back button -->
+    <a href="index.html" class="back">← Back to Home</a>
+
+    <h1>Photoluminescence Measurement</h1>
+    <p class="subtitle">
+      Representative PL data and experimental conditions used for acquisition.
+      This page focuses only on measurement setup and optical characterization.
+    </p>
+
+    <!-- PL IMAGE -->
+    <div class="section">
+      <h2>PL Spectrum</h2>
+
+      <img src="images/pl-figure.png" alt="PL Spectrum">
+
+      <div class="caption">
+        Room-temperature photoluminescence spectrum under 532 nm excitation.
+      </div>
+    </div>
+
+    <!-- SETTINGS TABLE -->
+    <div class="section">
+      <h2>Experimental Settings</h2>
+
+      <table>
+        <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+        </tr>
+
+        <tr><td>Technique</td><td>Micro-PL</td></tr>
+        <tr><td>Instrument</td><td>Horiba LabRAM HR Evolution</td></tr>
+        <tr><td>Excitation</td><td>532 nm CW laser</td></tr>
+        <tr><td>Nominal Power</td><td>100 mW</td></tr>
+        <tr><td>Neutral Density Filter</td><td>0.01%</td></tr>
+        <tr><td>Objective</td><td>50× LWD (NA = 0.50)</td></tr>
+        <tr><td>Spot Size</td><td>~3 µm diameter</td></tr>
+        <tr><td>Temperature</td><td>RT / 79 K</td></tr>
+        <tr><td>Spectral Range</td><td>540–1050 nm</td></tr>
+        <tr><td>Sample Type</td><td>Thin film / crystal / powder</td></tr>
+      </table>
+    </div>
+
+    <!-- NOTES -->
+    <div class="section">
+      <h2>Notes</h2>
       <p>
-        A research-facing database for organizing crystal structures,
-        photoluminescence, band gaps, and literature across selected phosphide families.
+        • Emission is dominated by near-band-edge recombination.<br>
+        • No peak shift observed with excitation power (if true).<br>
+        • Compare with Zn₃P₂ or CdTe for benchmarking.<br>
+        • Extend with temperature-dependent or power-law analysis if needed.
       </p>
+    </div>
 
-      <div class="nav-section-title">Materials Families</div>
-      <nav class="nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="am2p2.html">AM₂P₂</a>
-        <a href="zp.html">Zinc Phosphides</a>
-        <a href="mgp4.html">MgP₄</a>
-        <a href="sri2p2.html">SrI₂P₂</a>
-        <a href="rb-nazn4p3.html">Rb/NaZn₄P₃</a>
-        <a href="settings.html">PL settings</a>
-        
-      </nav>
+    <!-- DATA & ATTRIBUTION -->
+    <div class="section">
+      <h2>Data & Attribution</h2>
+      <p>
+        This database compiles experimental and computational insights across selected phosphide
+        semiconductor families. The computational work is the result of a high-throughput screening
+        of ~40,000 materials using first-principles DFT calculations with the HSE06 functional
+        performed by Zhenkun Yuan. All photoluminescence (PL) measurements presented here were
+        performed and analyzed by Smitakshi Goswami as part of ongoing research on
+        next-generation photovoltaic and infrared materials. The BaCd₂P₂ PL measurements were
+        performed by Gideon Kassa.
+      </p>
+    </div>
 
-      <div class="nav-section-title">Content Scope</div>
-      <nav class="nav">
-        <a href="#">Crystal Structures</a>
-        <a href="#">Photoluminescence</a>
-        <a href="#">Band Gaps</a>
-        <a href="#">Related Papers</a>
-      </nav>
-    </aside>
+    <!-- FOOTER -->
+    <div class="footer">
+      All photoluminescence measurements and analysis by Smitakshi Goswami.
+    </div>
 
-    <main class="content">
-      <section class="hero">
-        <h2>Materials Families</h2>
-        <p>
-          This database organizes selected semiconducting phosphide systems into broad material groups.
-          Each family page is designed to hold crystal structure visuals, PL data, band gap information,
-          and literature links in a consistent format for quick comparison across compounds.
-        </p>
-      </section>
-
-      <section class="grid">
-        <a class="card" href="zp.html">
-          <h3>Zinc Phosphides</h3>
-          <p>
-            Zinc phosphide materials relevant to optoelectronic and photovoltaic applications.
-          </p>
-          <div class="meta">Crystal structure • PL • band gap • papers</div>
-        </a>
-
-        <a class="card" href="am2p2.html">
-          <h3>AM₂P₂</h3>
-          <p>
-            Zintl-phase phosphides including Ca-, Sr-, and Ba-based systems relevant to
-            optoelectronic screening and next-generation absorber discovery.
-          </p>
-          <div class="meta">Crystal structure • PL • band gap • papers</div>
-        </a>
-
-        <a class="card" href="mgp4.html">
-          <h3>MgP₄</h3>
-          <p>
-            Magnesium phosphide family for comparing structure–property relationships,
-            optical response, and semiconducting behavior across phosphide chemistries.
-          </p>
-          <div class="meta">Crystal structure • PL • band gap • papers</div>
-        </a>
-
-        <a class="card" href="sri2p2.html">
-          <h3>SrI₂P₂</h3>
-          <p>
-            Strontium-containing phosphide systems included for theory–experiment
-            benchmarking and broader crystal chemistry comparisons.
-          </p>
-          <div class="meta">Crystal structure • PL • band gap • papers</div>
-        </a>
-
-        <a class="card" href="rb-nazn4p3.html">
-          <h3>Rb/NaZn₄P₃</h3>
-          <p>
-            Alkali zinc phosphides that expand the accessible structural design space
-            for semiconductor discovery and optical-property evaluation.
-          </p>
-          <div class="meta">Crystal structure • PL • band gap • papers</div>
-        </a>
-      </section>
-
-      <section class="section-card">
-        <h3>Data & Attribution</h3>
-        <p>
-          This database compiles experimental and computational insights across selected phosphide
-          semiconductor families. The computational work is the result of a high-throughput screening of ~40,000 materials using 1st principal DFT calculations using HSE 06 functional performed by Zhenkun Yuan. All photoluminescence (PL) measurements presented here were
-          performed and analyzed by Smitakshi Goswami as part of ongoing research on
-          next-generation photovoltaic and infrared materials. The BaCd2P2 PL measurements were performed by Gideon Kassa
-        </p>
-      </section>
-
-      <footer class="site-footer">
-        <p>
-          This materials database was developed and curated by Smitakshi Goswami.
-          All photoluminescence (PL) measurements presented here were performed and analyzed by the author.
-        </p>
-      </footer>
-    </main>
   </div>
+
 </body>
 </html>
