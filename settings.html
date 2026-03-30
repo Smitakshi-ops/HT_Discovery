@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PL Image & Settings | Phosphide Materials Database</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h1>Phosphide Materials Database</h1>
+      <p>
+        Structured material pages for crystal structure, photoluminescence,
+        band gap, and literature.
+      </p>
+
+      <div class="nav-section-title">Materials Families</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="am2p2.html">AM₂P₂</a>
+        <a href="znp.html">Zinc Phosphides</a>
+        <a href="mgp4.html">MgP₄</a>
+        <a href="sri2p2.html">SrI₂P₂</a>
+        <a href="rb-nazn4p3.html">Rb/NaZn₄P₃</a>
+      </nav>
+
+      <div class="nav-section-title">Additional Pages</div>
+      <nav class="nav">
+        <a href="pl-settings.html" class="active">PL Image & Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <header class="page-header">
+        <h2>PL Image & Measurement Settings</h2>
+        <p>
+          This page summarizes a representative photoluminescence image together
+          with the experimental settings used for acquisition. You can use this
+          page to document measurement conditions in a clean and reusable format.
+        </p>
+      </header>
+
+      <!-- PL Image Section -->
+      <section class="section-card">
+        <h3>Representative PL Image</h3>
+        <p>
+          Add your photoluminescence figure here. This can be a room-temperature
+          PL spectrum, low-temperature spectrum, power-dependent PL plot, or any
+          image you want to highlight.
+        </p>
+
+        <!-- Replace the src below with your actual image file -->
+        <img src="images/pl-figure.png" alt="Representative photoluminescence image" />
+
+        <p>
+          <strong>Figure note:</strong> Replace <code>images/pl-figure.png</code>
+          with the correct path to your PL image file.
+        </p>
+      </section>
+
+      <!-- Settings Table -->
+      <section class="section-card">
+        <h3>Measurement Settings</h3>
+        <p>
+          These settings can be edited for each experiment. The table below is a
+          template matching the style of the rest of your site.
+        </p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Value</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Technique</td>
+                <td>Micro-PL</td>
+                <td>Photoluminescence measurement</td>
+              </tr>
+              <tr>
+                <td>Instrument</td>
+                <td>Horiba LabRAM HR Evolution</td>
+                <td>Edit as needed</td>
+              </tr>
+              <tr>
+                <td>Excitation Wavelength</td>
+                <td>532 nm</td>
+                <td>Continuous-wave laser</td>
+              </tr>
+              <tr>
+                <td>Nominal Laser Power</td>
+                <td>100 mW</td>
+                <td>Before attenuation</td>
+              </tr>
+              <tr>
+                <td>Neutral Density Filter</td>
+                <td>0.01%</td>
+                <td>Update depending on experiment</td>
+              </tr>
+              <tr>
+                <td>Objective</td>
+                <td>50× LWD</td>
+                <td>NA = 0.50</td>
+              </tr>
+              <tr>
+                <td>Spot Size</td>
+                <td>~3 µm diameter</td>
+                <td>Measured optical spot size</td>
+              </tr>
+              <tr>
+                <td>Temperature</td>
+                <td>Room Temperature / 79 K</td>
+                <td>Specify exact condition</td>
+              </tr>
+              <tr>
+                <td>Detector / Spectral Window</td>
+                <td>Custom</td>
+                <td>Add detector or wavelength range</td>
+              </tr>
+              <tr>
+                <td>Sample Type</td>
+                <td>Thin film / crystal / powder</td>
+                <td>Edit for each dataset</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Description / Notes -->
+      <section class="section-card">
+        <h3>Experimental Notes</h3>
+        <p>
+          Use this section to briefly describe the measurement conditions,
+          interpretation, or significance of the displayed PL image.
+        </p>
+        <ul>
+          <li>State whether the emission is near-band-edge or defect-related.</li>
+          <li>Add temperature dependence or power dependence if relevant.</li>
+          <li>Include sample preparation details if helpful.</li>
+          <li>Link this page from a specific material page if needed.</li>
+        </ul>
+      </section>
+
+      <!-- Optional Footer Card -->
+      <section class="section-card">
+        <h3>Attribution</h3>
+        <p>
+          All photoluminescence measurements and analysis presented on this page
+          were performed and curated by Smitakshi Goswami.
+        </p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
