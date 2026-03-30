@@ -3,179 +3,254 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PL Measurement Settings</title>
+  <title>Phosphide Materials Database</title>
 
   <style>
+    :root {
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --sidebar: #1f2a30;
+      --sidebar-text: #dfe7eb;
+      --accent: #3e6b73;
+      --accent-light: #eef4f5;
+      --text: #1d2529;
+      --muted: #5f6b73;
+      --border: #d6dde1;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      color: #1d2529;
+      background: var(--bg);
+      color: var(--text);
     }
 
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 24px;
+    .layout {
+      display: flex;
+      min-height: 100vh;
     }
 
-    h1 {
-      font-size: 34px;
-      margin-bottom: 10px;
+    /* Sidebar */
+    .sidebar {
+      width: 290px;
+      background: var(--sidebar);
+      color: var(--sidebar-text);
+      padding: 28px 22px;
+      position: fixed;
+      height: 100vh;
     }
 
-    .subtitle {
-      color: #5f6b73;
-      margin-bottom: 30px;
-      font-size: 16px;
-      line-height: 1.6;
+    .nav-section-title {
+      margin: 24px 0 10px 0;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #9fb1ba;
     }
 
-    .section {
+    .nav a {
+      display: block;
+      color: var(--sidebar-text);
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-bottom: 6px;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: #2b3940;
+      color: white;
+    }
+
+    /* Content */
+    .content {
+      margin-left: 290px;
+      padding: 48px;
+      width: calc(100% - 290px);
+    }
+
+    .hero {
       background: white;
-      border: 1px solid #d6dde1;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+
+    .hero h2 {
+      margin: 0 0 10px 0;
+      font-size: 32px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Table */
+    .table-card {
+      background: white;
+      border: 1px solid var(--border);
       border-radius: 16px;
       padding: 24px;
-      margin-bottom: 24px;
-      box-shadow: 0 2px 8px rgba(18, 28, 33, 0.04);
-    }
-
-    .section h2 {
-      margin-top: 0;
-      font-size: 22px;
-      color: #3e6b73;
-    }
-
-    img {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid #d6dde1;
-      margin-top: 10px;
-    }
-
-    .caption {
-      font-size: 14px;
-      color: #5f6b73;
-      margin-top: 8px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 10px;
     }
 
     th, td {
-      padding: 12px;
+      padding: 14px;
       border-bottom: 1px solid #e1e6ea;
       text-align: left;
-      font-size: 15px;
     }
 
     th {
-      background: #eef4f5;
-      color: #1d2529;
+      background: var(--accent-light);
+      font-size: 14px;
+      text-transform: uppercase;
     }
 
-    .footer {
-      margin-top: 40px;
-      font-size: 13px;
-      color: #6a777f;
-      border-top: 1px solid #d6dde1;
-      padding-top: 16px;
-    }
-
-    a.back {
-      display: inline-block;
-      margin-bottom: 20px;
-      text-decoration: none;
-      color: #3e6b73;
+    .material {
       font-weight: bold;
+      color: var(--accent);
     }
 
-    a.back:hover {
-      text-decoration: underline;
+    .link {
+      display: inline-block;
+      padding: 5px 10px;
+      border: 1px solid #c9d8dc;
+      border-radius: 20px;
+      text-decoration: none;
+      color: var(--accent);
+      font-size: 13px;
     }
+
+    .link:hover {
+      background: #eef4f5;
+    }
+
+    .section {
+      margin-top: 30px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
   </style>
 </head>
 <body>
 
-  <div class="container">
+<div class="layout">
 
-    <!-- Back button -->
-    <a href="index.html" class="back">← Back to Home</a>
+  <!-- SIDEBAR (UNCHANGED AS YOU REQUESTED) -->
+  <aside class="sidebar">
 
-    <h1>Photoluminescence Measurement</h1>
-    <p class="subtitle">
-      Representative PL data and experimental conditions used for acquisition.
-      This page focuses only on measurement setup and optical characterization.
-    </p>
+    <div class="nav-section-title">Materials Families</div>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="am2p2.html">AM₂P₂</a>
+      <a href="zp.html">Zinc Phosphides</a>
+      <a href="mgp4.html">MgP₄</a>
+      <a href="sri2p2.html">SrI₂P₂</a>
+      <a href="rb-nazn4p3.html">Rb/NaZn₄P₃</a>
+      <a href="pl-settings.html">PL Settings</a>
+    </nav>
 
-    <!-- PL IMAGE -->
-    <div class="section">
-      <h2>PL Spectrum</h2>
+  </aside>
 
-      <img src="images/pl-figure.png" alt="PL Spectrum">
+  <!-- MAIN CONTENT -->
+  <main class="content">
 
-      <div class="caption">
-        Room-temperature photoluminescence spectrum under 532 nm excitation.
-      </div>
-    </div>
-
-    <!-- SETTINGS TABLE -->
-    <div class="section">
-      <h2>Experimental Settings</h2>
-
-      <table>
-        <tr>
-          <th>Parameter</th>
-          <th>Value</th>
-        </tr>
-
-        <tr><td>Technique</td><td>Micro-PL</td></tr>
-        <tr><td>Instrument</td><td>Horiba LabRAM HR Evolution</td></tr>
-        <tr><td>Excitation</td><td>532 nm CW laser</td></tr>
-        <tr><td>Nominal Power</td><td>100 mW</td></tr>
-        <tr><td>Neutral Density Filter</td><td>0.01%</td></tr>
-        <tr><td>Objective</td><td>50× LWD (NA = 0.50)</td></tr>
-        <tr><td>Spot Size</td><td>~3 µm diameter</td></tr>
-        <tr><td>Temperature</td><td>RT / 79 K</td></tr>
-        <tr><td>Spectral Range</td><td>540–1050 nm</td></tr>
-        <tr><td>Sample Type</td><td>Thin film / crystal / powder</td></tr>
-      </table>
-    </div>
-
-    <!-- NOTES -->
-    <div class="section">
-      <h2>Notes</h2>
+    <section class="hero">
+      <h2>Phosphide Materials Database</h2>
       <p>
-        • Emission is dominated by near-band-edge recombination.<br>
-        • No peak shift observed with excitation power (if true).<br>
-        • Compare with Zn₃P₂ or CdTe for benchmarking.<br>
-        • Extend with temperature-dependent or power-law analysis if needed.
+        A structured overview of phosphide semiconductor families including crystal structure,
+        band gap, photoluminescence (PL), literature references, and experimental settings.
       </p>
-    </div>
+    </section>
 
-    <!-- DATA & ATTRIBUTION -->
-    <div class="section">
-      <h2>Data & Attribution</h2>
+    <!-- TABLE -->
+    <section class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Material</th>
+            <th>Crystal Structure</th>
+            <th>Band Gap</th>
+            <th>PL</th>
+            <th>Papers</th>
+            <th>Settings</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td class="material">AM₂P₂</td>
+            <td><a class="link" href="am2p2.html">View</a></td>
+            <td><a class="link" href="am2p2.html">View</a></td>
+            <td><a class="link" href="am2p2.html">View</a></td>
+            <td><a class="link" href="am2p2.html">View</a></td>
+            <td><a class="link" href="pl-settings.html">Settings</a></td>
+          </tr>
+
+          <tr>
+            <td class="material">Zinc Phosphides</td>
+            <td><a class="link" href="zp.html">View</a></td>
+            <td><a class="link" href="zp.html">View</a></td>
+            <td><a class="link" href="zp.html">View</a></td>
+            <td><a class="link" href="zp.html">View</a></td>
+            <td><a class="link" href="pl-settings.html">Settings</a></td>
+          </tr>
+
+          <tr>
+            <td class="material">MgP₄</td>
+            <td><a class="link" href="mgp4.html">View</a></td>
+            <td><a class="link" href="mgp4.html">View</a></td>
+            <td><a class="link" href="mgp4.html">View</a></td>
+            <td><a class="link" href="mgp4.html">View</a></td>
+            <td><a class="link" href="pl-settings.html">Settings</a></td>
+          </tr>
+
+          <tr>
+            <td class="material">SrI₂P₂</td>
+            <td><a class="link" href="sri2p2.html">View</a></td>
+            <td><a class="link" href="sri2p2.html">View</a></td>
+            <td><a class="link" href="sri2p2.html">View</a></td>
+            <td><a class="link" href="sri2p2.html">View</a></td>
+            <td><a class="link" href="pl-settings.html">Settings</a></td>
+          </tr>
+
+          <tr>
+            <td class="material">Rb/NaZn₄P₃</td>
+            <td><a class="link" href="rb-nazn4p3.html">View</a></td>
+            <td><a class="link" href="rb-nazn4p3.html">View</a></td>
+            <td><a class="link" href="rb-nazn4p3.html">View</a></td>
+            <td><a class="link" href="rb-nazn4p3.html">View</a></td>
+            <td><a class="link" href="pl-settings.html">Settings</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ATTRIBUTION -->
+    <section class="section">
+      <h3>Data & Attribution</h3>
       <p>
         This database compiles experimental and computational insights across selected phosphide
-        semiconductor families. The computational work is the result of a high-throughput screening
-        of ~40,000 materials using first-principles DFT calculations with the HSE06 functional
-        performed by Zhenkun Yuan. All photoluminescence (PL) measurements presented here were
-        performed and analyzed by Smitakshi Goswami as part of ongoing research on
-        next-generation photovoltaic and infrared materials. The BaCd₂P₂ PL measurements were
-        performed by Gideon Kassa.
+        semiconductor families. The computational work is based on high-throughput DFT screening
+        using the HSE06 functional performed by Zhenkun Yuan. All PL measurements were performed
+        and analyzed by Smitakshi Goswami. BaCd₂P₂ PL measurements were performed by Gideon Kassa.
       </p>
-    </div>
+    </section>
 
-    <!-- FOOTER -->
-    <div class="footer">
-      All photoluminescence measurements and analysis by Smitakshi Goswami.
-    </div>
+  </main>
 
-  </div>
+</div>
 
 </body>
 </html>
