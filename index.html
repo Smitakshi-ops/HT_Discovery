@@ -4,253 +4,118 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phosphide Materials Database</title>
-
-  <style>
-    :root {
-      --bg: #f4f6f8;
-      --panel: #ffffff;
-      --sidebar: #1f2a30;
-      --sidebar-text: #dfe7eb;
-      --accent: #3e6b73;
-      --accent-light: #eef4f5;
-      --text: #1d2529;
-      --muted: #5f6b73;
-      --border: #d6dde1;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    .layout {
-      display: flex;
-      min-height: 100vh;
-    }
-
-    /* Sidebar */
-    .sidebar {
-      width: 290px;
-      background: var(--sidebar);
-      color: var(--sidebar-text);
-      padding: 28px 22px;
-      position: fixed;
-      height: 100vh;
-    }
-
-    .nav-section-title {
-      margin: 24px 0 10px 0;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: #9fb1ba;
-    }
-
-    .nav a {
-      display: block;
-      color: var(--sidebar-text);
-      text-decoration: none;
-      padding: 10px 12px;
-      border-radius: 8px;
-      margin-bottom: 6px;
-    }
-
-    .nav a:hover,
-    .nav a.active {
-      background: #2b3940;
-      color: white;
-    }
-
-    /* Content */
-    .content {
-      margin-left: 290px;
-      padding: 48px;
-      width: calc(100% - 290px);
-    }
-
-    .hero {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 30px;
-      margin-bottom: 30px;
-    }
-
-    .hero h2 {
-      margin: 0 0 10px 0;
-      font-size: 32px;
-    }
-
-    .hero p {
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    /* Table */
-    .table-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      padding: 14px;
-      border-bottom: 1px solid #e1e6ea;
-      text-align: left;
-    }
-
-    th {
-      background: var(--accent-light);
-      font-size: 14px;
-      text-transform: uppercase;
-    }
-
-    .material {
-      font-weight: bold;
-      color: var(--accent);
-    }
-
-    .link {
-      display: inline-block;
-      padding: 5px 10px;
-      border: 1px solid #c9d8dc;
-      border-radius: 20px;
-      text-decoration: none;
-      color: var(--accent);
-      font-size: 13px;
-    }
-
-    .link:hover {
-      background: #eef4f5;
-    }
-
-    .section {
-      margin-top: 30px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-    }
-
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<div class="layout">
-
-  <!-- SIDEBAR (UNCHANGED AS YOU REQUESTED) -->
-  <aside class="sidebar">
-
-    <div class="nav-section-title">Materials Families</div>
-    <nav class="nav">
-      <a href="index.html" class="active">Home</a>
-      <a href="am2p2.html">AM₂P₂</a>
-      <a href="zp.html">Zinc Phosphides</a>
-      <a href="mgp4.html">MgP₄</a>
-      <a href="sri2p2.html">SrI₂P₂</a>
-      <a href="rb-nazn4p3.html">Rb/NaZn₄P₃</a>
-      <a href="pl-settings.html">PL Settings</a>
-    </nav>
-
-  </aside>
-
-  <!-- MAIN CONTENT -->
-  <main class="content">
-
-    <section class="hero">
-      <h2>Phosphide Materials Database</h2>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h1>Phosphide Materials Database</h1>
       <p>
-        A structured overview of phosphide semiconductor families including crystal structure,
-        band gap, photoluminescence (PL), literature references, and experimental settings.
+        Structured material pages for crystal structure, photoluminescence,
+        band gap, and literature.
       </p>
-    </section>
 
-    <!-- TABLE -->
-    <section class="table-card">
-      <table>
-        <thead>
-          <tr>
-            <th>Material</th>
-            <th>Crystal Structure</th>
-            <th>Band Gap</th>
-            <th>PL</th>
-            <th>Papers</th>
-            <th>Settings</th>
-          </tr>
-        </thead>
+      <div class="nav-section-title">Materials Families</div>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="am2p2.html">AM₂P₂</a>
+        <a href="zp.html">Zinc Phosphides</a>
+        <a href="mgp4.html">MgP₄</a>
+        <a href="sri2p2.html">SrI₂P₂</a>
+        <a href="rb-nazn4p3.html">Rb/NaZn₄P₃</a>
+        <a href="pl-settings.html">PL Settings</a>
+      </nav>
+    </aside>
 
-        <tbody>
+    <!-- Main Content -->
+    <main class="content">
+      <header class="page-header">
+        <h2>Materials Families</h2>
+        <p>
+          Select a material family below to open its dedicated page containing
+          crystal structure, band gap, photoluminescence, and related literature.
+        </p>
+      </header>
 
-          <tr>
-            <td class="material">AM₂P₂</td>
-            <td><a class="link" href="am2p2.html">View</a></td>
-            <td><a class="link" href="am2p2.html">View</a></td>
-            <td><a class="link" href="am2p2.html">View</a></td>
-            <td><a class="link" href="am2p2.html">View</a></td>
-            <td><a class="link" href="pl-settings.html">Settings</a></td>
-          </tr>
+      <!-- Material Cards -->
+      <section class="grid">
+        <a class="card" href="am2p2.html">
+          <h3>AM₂P₂</h3>
+          <p>
+            Zintl-phase phosphides including Ca-, Sr-, and Ba-based systems for
+            optoelectronic screening and absorber-material discovery.
+          </p>
+          <div class="meta">Crystal structure • Band gap • PL • Papers</div>
+        </a>
 
-          <tr>
-            <td class="material">Zinc Phosphides</td>
-            <td><a class="link" href="zp.html">View</a></td>
-            <td><a class="link" href="zp.html">View</a></td>
-            <td><a class="link" href="zp.html">View</a></td>
-            <td><a class="link" href="zp.html">View</a></td>
-            <td><a class="link" href="pl-settings.html">Settings</a></td>
-          </tr>
+        <a class="card" href="zp.html">
+          <h3>Zinc Phosphides</h3>
+          <p>
+            Zinc phosphide materials relevant to photovoltaic and optoelectronic
+            applications, including comparative PL behavior.
+          </p>
+          <div class="meta">Crystal structure • Band gap • PL • Papers</div>
+        </a>
 
-          <tr>
-            <td class="material">MgP₄</td>
-            <td><a class="link" href="mgp4.html">View</a></td>
-            <td><a class="link" href="mgp4.html">View</a></td>
-            <td><a class="link" href="mgp4.html">View</a></td>
-            <td><a class="link" href="mgp4.html">View</a></td>
-            <td><a class="link" href="pl-settings.html">Settings</a></td>
-          </tr>
+        <a class="card" href="mgp4.html">
+          <h3>MgP₄</h3>
+          <p>
+            Magnesium phosphide family for studying structure–property relationships,
+            optical response, and semiconducting behavior.
+          </p>
+          <div class="meta">Crystal structure • Band gap • PL • Papers</div>
+        </a>
 
-          <tr>
-            <td class="material">SrI₂P₂</td>
-            <td><a class="link" href="sri2p2.html">View</a></td>
-            <td><a class="link" href="sri2p2.html">View</a></td>
-            <td><a class="link" href="sri2p2.html">View</a></td>
-            <td><a class="link" href="sri2p2.html">View</a></td>
-            <td><a class="link" href="pl-settings.html">Settings</a></td>
-          </tr>
+        <a class="card" href="sri2p2.html">
+          <h3>SrI₂P₂</h3>
+          <p>
+            Strontium-containing phosphide systems included for theory–experiment
+            benchmarking and broader crystal chemistry comparisons.
+          </p>
+          <div class="meta">Crystal structure • Band gap • PL • Papers</div>
+        </a>
 
-          <tr>
-            <td class="material">Rb/NaZn₄P₃</td>
-            <td><a class="link" href="rb-nazn4p3.html">View</a></td>
-            <td><a class="link" href="rb-nazn4p3.html">View</a></td>
-            <td><a class="link" href="rb-nazn4p3.html">View</a></td>
-            <td><a class="link" href="rb-nazn4p3.html">View</a></td>
-            <td><a class="link" href="pl-settings.html">Settings</a></td>
-          </tr>
+        <a class="card" href="rb-nazn4p3.html">
+          <h3>Rb/NaZn₄P₃</h3>
+          <p>
+            Alkali zinc phosphides that broaden the structural design space for
+            semiconductor discovery and optical-property evaluation.
+          </p>
+          <div class="meta">Crystal structure • Band gap • PL • Papers</div>
+        </a>
 
-        </tbody>
-      </table>
-    </section>
+        <a class="card" href="pl-settings.html">
+          <h3>PL Settings</h3>
+          <p>
+            Experimental measurement settings for PL acquisition, including
+            excitation conditions, optics, temperature, and sample details.
+          </p>
+          <div class="meta">Instrument • Laser • Objective • Temperature</div>
+        </a>
+      </section>
 
-    <!-- ATTRIBUTION -->
-    <section class="section">
-      <h3>Data & Attribution</h3>
-      <p>
-        This database compiles experimental and computational insights across selected phosphide
-        semiconductor families. The computational work is based on high-throughput DFT screening
-        using the HSE06 functional performed by Zhenkun Yuan. All PL measurements were performed
-        and analyzed by Smitakshi Goswami. BaCd₂P₂ PL measurements were performed by Gideon Kassa.
-      </p>
-    </section>
+      <!-- Data & Attribution -->
+      <section class="section-card">
+        <h3>Data & Attribution</h3>
+        <p>
+          This database compiles experimental and computational insights across selected phosphide
+          semiconductor families. The computational work is the result of a high-throughput screening
+          of ~40,000 materials using first-principles DFT calculations with the HSE06 functional
+          performed by Zhenkun Yuan. All photoluminescence (PL) measurements presented here were
+          performed and analyzed by Smitakshi Goswami as part of ongoing research on
+          next-generation photovoltaic and infrared materials. The BaCd₂P₂ PL measurements were
+          performed by Gideon Kassa.
+        </p>
+      </section>
 
-  </main>
-
-</div>
-
+      <footer class="site-footer">
+        <p>
+          This materials database was developed and curated by Smitakshi Goswami.
+          All photoluminescence (PL) measurements presented here were performed and analyzed by the author.
+        </p>
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
