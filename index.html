@@ -47,21 +47,21 @@
     }
 
     .sidebar h1 {
-      margin: 0 0 8px 0;
+      margin: 0 0 8px;
       font-size: 24px;
       line-height: 1.2;
       color: white;
     }
 
     .sidebar p {
-      margin: 0 0 24px 0;
+      margin: 0 0 24px;
       font-size: 14px;
       line-height: 1.6;
       color: #b8c7cf;
     }
 
     .nav-section-title {
-      margin: 24px 0 10px 0;
+      margin: 24px 0 10px;
       font-size: 12px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -92,7 +92,7 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, #ffffff, #eef4f5);
+      background: linear-gradient(135deg, var(--panel), var(--accent-light));
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 34px;
@@ -100,7 +100,7 @@
     }
 
     .hero h2 {
-      margin: 0 0 14px 0;
+      margin: 0 0 14px;
       font-size: 34px;
       line-height: 1.2;
     }
@@ -123,7 +123,7 @@
     }
 
     .section-card h3 {
-      margin: 0 0 12px 0;
+      margin: 0 0 12px;
       font-size: 22px;
       color: var(--accent);
     }
@@ -161,7 +161,7 @@
     }
 
     .card h4 {
-      margin: 0 0 10px 0;
+      margin: 0 0 10px;
       font-size: 22px;
       color: var(--accent);
     }
@@ -218,9 +218,9 @@
 
       <div class="nav-section-title">Materials Families</div>
       <nav class="nav">
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html" class="active" aria-current="page">Home</a>
         <a href="am2p2.html">AM₂P₂</a>
-        <a href="zp.html">Zinc Phosphides</a>
+        <a href="znp.html">Zinc Phosphides</a>
         <a href="mgp4.html">MgP₄</a>
         <a href="sri2p2.html">SrI₂P₂</a>
         <a href="rb-nazn4p3.html">Rb/NaZn₄P₃</a>
@@ -263,7 +263,7 @@
             <div class="meta">Crystal structure • PL • band gap • papers</div>
           </a>
 
-          <a class="card" href="zp.html">
+          <a class="card" href="znp.html">
             <h4>Zinc Phosphides</h4>
             <p>
               Zinc phosphide systems such as ZnP₂ and Zn₃P₂, central to understanding bright emission,
@@ -311,21 +311,19 @@
       </section>
 
       <section class="section-card">
-        <h3>Data & Attribution</h3>
+        <h3>Data &amp; Attribution</h3>
         <p>
-          This database compiles experimental and computational insights across selected phosphide
-          semiconductor families. The computational work is the result of a high-throughput screening
-          of ~40,000 materials using first-principles DFT calculations with the HSE06 functional
-          performed by Zhenkun Yuan. All photoluminescence measurements presented here were performed
-          and analyzed by Smitakshi Goswami as part of ongoing research on next-generation photovoltaic
-          and infrared materials. The BaCd₂P₂ PL measurements were performed by Gideon Kassa.
+          The computational results draw on a high-throughput screening of approximately 40,000
+          materials using first-principles DFT calculations with the HSE06 functional, performed
+          by Zhenkun Yuan. Except for BaCd₂P₂, the photoluminescence measurements presented here
+          were performed and analyzed by Smitakshi Goswami as part of ongoing research on
+          next-generation photovoltaic and infrared materials. Gideon Kassa performed the
+          BaCd₂P₂ photoluminescence measurements.
         </p>
       </section>
 
       <footer class="site-footer">
-        <p>
-          This materials database was developed and curated by Smitakshi Goswami.
-        </p>
+        <p>This materials database was developed and curated by Smitakshi Goswami.</p>
       </footer>
     </main>
   </div>
