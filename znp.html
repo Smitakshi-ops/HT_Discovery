@@ -1,73 +1,166 @@
-<main class="content">
-  <header class="page-header">
-    <h2>Zinc Phosphides</h2>
-    <p>
-      This page highlights two zinc phosphides relevant to photovoltaic and
-      optoelectronic applications, with crystal structure, photoluminescence,
-      band gap, and literature information.
-    </p>
-  </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zinc Phosphides | Phosphide Materials Database</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --sidebar: #1f2a30;
+      --sidebar-text: #dfe7eb;
+      --accent: #3e6b73;
+      --muted: #5f6b73;
+      --border: #d6dde1;
+    }
 
-  <section class="section-card">
-    <h3>Overview</h3>
-    <p>
-      Zinc phosphides are earth-abundant semiconductors of interest for
-      photovoltaic absorbers. Monoclinic zinc diphosphide (ZnP₂) is an emerging
-      absorber candidate, while Zn₃P₂ has a longer history in photovoltaic
-      research.
-    </p>
-  </section>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: var(--bg); color: #1d2529; }
+    .layout { display: flex; min-height: 100vh; }
 
-  <section class="section-card">
-    <h3>Crystal Structure</h3>
-    <img src="ZnP2-P2_1_c (2).png" alt="Crystal structure of monoclinic ZnP₂">
-  </section>
+    .sidebar {
+      width: 290px; background: var(--sidebar); color: var(--sidebar-text);
+      padding: 28px 22px; position: fixed; height: 100vh; overflow-y: auto;
+    }
 
-  <section class="section-card">
-    <h3>Photoluminescence</h3>
-    <img src="ZNP2_VS_ZN3P2.png" alt="Photoluminescence spectra of ZnP₂ and Zn₃P₂">
-    <img src="ZNP2_PL_all.png" alt="Photoluminescence spectra of ZnP₂">
-  </section>
+    .sidebar h1 { margin: 0 0 8px; font-size: 23px; color: white; }
+    .sidebar p { margin: 0 0 24px; font-size: 14px; line-height: 1.6; color: #b8c7cf; }
 
-  <section class="section-card">
-    <h3>Band Gap</h3>
-    <div class="table-container">
-      <table aria-label="Experimental and computed band gaps">
-        <thead>
-          <tr>
-            <th scope="col">Material</th>
-            <th scope="col">Experimental (eV)</th>
-            <th scope="col">Experimental method</th>
-            <th scope="col">Computed (eV)</th>
-            <th scope="col">Computational method</th>
-            <th scope="col">Sample</th>
-            <th scope="col">Notes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">ZnP₂</th>
-            <td>1.49</td>
-            <td>PL peak</td>
-            <td>1.46</td>
-            <td>HSE06</td>
-            <td>Bulk polycrystalline</td>
-            <td>Direct band gap</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+    .nav-section-title {
+      margin: 24px 0 10px; font-size: 12px; text-transform: uppercase;
+      letter-spacing: 0.08em; color: #9fb1ba;
+    }
 
-  <section class="section-card">
-    <h3>Related Papers</h3>
-    <ul>
-      <li>
-        Yuan et al. (2026).
-        <a href="https://doi.org/10.48550/arXiv.2603.18263"
-           target="_blank" rel="noopener noreferrer">Long photoexcited carrier lifetime in a stable and earth-abundant zinc polyphosphide</a>.
-        arXiv preprint.
-      </li>
-    </ul>
-  </section>
-</main>
+    .nav a {
+      display: block; color: var(--sidebar-text); text-decoration: none;
+      padding: 10px 12px; border-radius: 8px; margin-bottom: 6px; font-size: 15px;
+    }
+
+    .nav a:hover, .nav a.active { background: #2b3940; color: white; }
+
+    .content { margin-left: 290px; width: calc(100% - 290px); padding: 42px 48px 56px; }
+    .page-header h2 { margin: 0 0 10px; font-size: 34px; }
+    .page-header p { margin: 0 0 24px; color: var(--muted); line-height: 1.8; max-width: 900px; }
+
+    .section-card {
+      background: var(--panel); border: 1px solid var(--border); border-radius: 16px;
+      padding: 24px; margin-bottom: 22px; box-shadow: 0 2px 8px rgba(18, 28, 33, 0.04);
+    }
+
+    .section-card h3 { margin-top: 0; margin-bottom: 12px; font-size: 22px; color: var(--accent); }
+    .section-card p, .section-card li { line-height: 1.8; color: #334047; }
+
+    .section-card img {
+      width: 100%; max-width: 560px; border-radius: 12px; border: 1px solid var(--border);
+      margin-top: 12px; background: white;
+    }
+
+    .table-container { overflow-x: auto; }
+    .table-container table { width: 100%; border-collapse: collapse; }
+    .table-container th, .table-container td {
+      padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border);
+    }
+    .table-container thead th { background: var(--bg); }
+
+    ul { padding-left: 22px; }
+    a { color: var(--accent); }
+
+    @media (max-width: 900px) {
+      .layout { flex-direction: column; }
+      .sidebar { position: relative; width: 100%; height: auto; }
+      .content { margin-left: 0; width: 100%; padding: 28px 20px 36px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h1>Phosphide Materials Database</h1>
+      <p>Structured material pages for crystal structure, PL, band gap, and literature.</p>
+
+      <div class="nav-section-title">Materials Families</div>
+      <nav class="nav" aria-label="Materials families">
+        <a href="index.html">Home</a>
+        <a href="am2p2.html">AM₂P₂</a>
+        <a href="znp.html" class="active" aria-current="page">Zinc Phosphides</a>
+        <a href="mgp4.html">MgP₄</a>
+        <a href="sri2p2.html">SrI₂P₂</a>
+        <a href="rb-nazn4p3.html">Rb/NaZn₄P₃</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header class="page-header">
+        <h2>Zinc Phosphides</h2>
+        <p>
+          This page covers monoclinic ZnP₂ and Zn₃P₂, two zinc phosphides of
+          interest for photovoltaic and optoelectronic applications.
+        </p>
+      </header>
+
+      <section class="section-card">
+        <h3>Overview</h3>
+        <p>
+          Zinc phosphides are earth-abundant semiconductors of interest as
+          photovoltaic absorbers. Monoclinic zinc diphosphide (ZnP₂) is an emerging
+          absorber candidate, while Zn₃P₂ has a longer history in photovoltaic research.
+        </p>
+      </section>
+
+      <section class="section-card">
+        <h3>Crystal Structure</h3>
+        <img src="ZnP2-P2_1_c (2).png" alt="Crystal structure of monoclinic ZnP₂" />
+      </section>
+
+      <section class="section-card">
+        <h3>Photoluminescence</h3>
+        <img src="ZNP2_VS_ZN3P2.png" alt="Comparison of ZnP₂ and Zn₃P₂ photoluminescence spectra" />
+        <img src="ZNP2_PL_all.png" alt="Photoluminescence spectra of ZnP₂" />
+      </section>
+
+      <section class="section-card">
+        <h3 id="band-gap-heading">Band Gap</h3>
+        <div class="table-container">
+          <table aria-labelledby="band-gap-heading">
+            <thead>
+              <tr>
+                <th scope="col">Material</th>
+                <th scope="col">Experimental (eV)</th>
+                <th scope="col">Experimental method</th>
+                <th scope="col">Computed (eV)</th>
+                <th scope="col">Computational method</th>
+                <th scope="col">Sample</th>
+                <th scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">ZnP₂</th>
+                <td>1.49</td>
+                <td>PL peak</td>
+                <td>1.46</td>
+                <td>HSE06</td>
+                <td>Bulk polycrystalline</td>
+                <td>Direct band gap</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section-card">
+        <h3>Related Papers</h3>
+        <ul>
+          <li>
+            Yuan et al. (2026).
+            <a href="https://doi.org/10.48550/arXiv.2603.18263"
+               target="_blank" rel="noopener noreferrer">Long photoexcited carrier lifetime in a stable and earth-abundant zinc polyphosphide</a>.
+            arXiv preprint.
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
